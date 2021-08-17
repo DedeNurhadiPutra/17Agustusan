@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: #05070c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.square {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background-color: #fff;
+    border: 5px solid #f3ecec;
+    overflow: hidden;
+}
+
+.sqr-liquid {
+    position: absolute;
+    top: -25%;
+    left: -5%;
+    width: 295px;
+    height: 195px;
+    background: #fff;
+    transition: 0.5s;
+}
+
+.sqr-liquid::before {
+    content: '';
+    position: absolute;
+    width: 150%;
+    height: 130%;
+    background: white;
+    border-top: 150px solid #ff0000;
+    border-bottom: 150px solid white;
+    box-sizing: border-box;
+    filter: url(#wavy);
+}
+
+.sqr-liquid::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    filter: url(#wavy);
+}
+
+svg {
+    width: 0;
+    height: 0;
+}
+
+.square:hover .sqr-liquid {
+    top: 30px;
+    cursor: pointer;
+}
+
+.square:hover .text-1{
+    position: sticky;
+    color: #fff;
+    font-size: 60px;
+    letter-spacing: 2px;
+    z-index: 1;
+    display: inline-block;
+    font-family: 'Lexend', sans-serif;
+    -webkit-text-stroke: 0.5px #fff;
+    animation: move 0.6s linear 1;
+    animation-fill-mode: forwards;
+    transition: width 0.2s;
+    background-color: #fff;
+    background-image: linear-gradient(45deg, #fff, #ff0000);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+}
+
+.square:hover .text-2{
+    position: sticky;
+    color: #fff;
+    font-size: 1rem;
+    z-index: 1;
+    display: inline-block;
+    font-family: 'Lexend', sans-serif;
+    animation: move-2 0.6s linear 1;
+    animation-fill-mode: forwards;
+    -webkit-text-stroke: 0.5px #fff;
+    transition: width 0.2s;
+    background-color: #f3ec78;
+    background-image: linear-gradient(45deg, #fff, #ff0000);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+}
+
+.square:hover .text-3{
+    position: sticky;
+    color: #F9DEDE;
+    font-size: 0.92rem;
+    z-index: 1;
+    letter-spacing: 1px;
+    font-family: 'Lexend', sans-serif;
+    animation: move-3 0.68s linear 1;
+    animation-fill-mode: forwards;
+    transition: width 0.2s;
+    text-align: center;
+}
+
+.square:hover .text-4{
+    position: sticky;
+    color: #fff;
+    font-size: 0.92rem;
+    z-index: 1;
+    letter-spacing: 1px;
+    font-family: 'Lexend', sans-serif;
+    animation: move-4 0.6s linear 1;
+    animation-fill-mode: forwards;
+    transition: width 0.2s;
+    text-align: center;
+    
+}
+
+.text-1, .text-2, .text-3 .text-4 {
+    padding-top: 10px;
+}
+
+@keyframes sqr-animate {
+    0% {
+        transform: translate(-55%, -55%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-55%, -55%) rotate(360deg);
+    }
+}
+
+@keyframes move {
+    0% {
+        transform: translate(50%, -80%);
+    }
+    100% {
+        transform: translate(50%, 50%);
+    }
+}
+@keyframes move-2 {
+    0% {
+        transform: translate(780%, 20%);
+    }
+    100% {
+        transform: translate(160%, 20%);
+    }
+}
+@keyframes move-3 {
+    0% {
+        transform: translate(15%, 30%);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(15%, 100%);
+        opacity:100;
+    }
+    
+}
+@keyframes move-4 {
+    0% {
+        transform: translate(-50%, 40%);
+    }
+    100% {
+        transform: translate(1%, 80%);
+    }
+}
+
+.footer {
+    display: block;
+    text-align: center;
+    color: #08D9D6;
+    margin: 1rem auto;
+    text-shadow: 0 0 5px #FF2E63;
+}
